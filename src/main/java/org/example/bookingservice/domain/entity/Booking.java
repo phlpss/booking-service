@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Data
 @Table(name = "bookings")
-public class BookingEntity {
+public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -27,9 +27,9 @@ public class BookingEntity {
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
-    private UserEntity user;
+    private User user;
 
     @ManyToOne
     @JoinColumn(name = "car_id", nullable = false)
-    private CarEntity car;
+    private Car car;
 }

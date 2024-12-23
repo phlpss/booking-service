@@ -13,7 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @Table(name = "cars")
-public class CarEntity {
+public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -31,5 +31,5 @@ public class CarEntity {
     private boolean available;
 
     @OneToMany(mappedBy = "car", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<BookingEntity> bookingEntityList = new ArrayList<>();
+    private List<Booking> bookingList = new ArrayList<>();
 }

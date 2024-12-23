@@ -14,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @Table(name = "users")
-public class UserEntity {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -30,5 +30,5 @@ public class UserEntity {
     private String password;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<BookingEntity> bookingEntityList = new ArrayList<>();
+    private List<Booking> bookingList = new ArrayList<>();
 }
